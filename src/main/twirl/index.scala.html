@@ -1,0 +1,68 @@
+@()
+
+@import xyz._0x7e.Asset
+@import xyz._0x7e.webjars.Webjar
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>0x7e.xyz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" type="text/css" href="@{Webjar.asset("material-design-lite", "1.3.0", "material.min.css")}">
+        <link rel="stylesheet" type="text/css" href="@{Asset.at("0x7e.css")}">
+    </head>
+    <body>
+        <div class="layout-bg-code mdl-layout mdl-js-layout">
+            <header class="mdl-layout__header mdl-layout__header--transparent">
+                <div class="mdl-layout__header-row">
+                        <!-- Title -->
+                    <span class="mdl-layout-title">0x7e.xyz ~ make links short again</span>
+                        <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                        <!-- Navigation -->
+                    <nav class="mdl-navigation">
+                        Tech Stack:
+                        <a class="mdl-navigation__link" href="https://scala-lang.org" target="_blank">Scala</a>
+                        <a class="mdl-navigation__link" href="http://http4s.org/" target="_blank">http4s</a>
+                        <a class="mdl-navigation__link" href="http://argonaut.io/" target="_blank">argonaut</a>
+                        <a class="mdl-navigation__link" href="https://github.com/tpolecat/doobie" target="_blank">doobie</a>
+                        <a class="mdl-navigation__link" href="https://getmdl.io/" target="_blank">MDL</a>
+                    </nav>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--6-col-desktop mdl-cell--3-offset-desktop">
+                        <div id="shortener" class="shorten-link-card mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                                <h2>Short links!</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <form action="#">
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" id="link" autocomplete="off">
+                                        <label class="mdl-textfield__label" for="link">https://reddit.com/r/scala</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <button id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                    Shorten
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+        </div>
+    </body>
+    <script type="text/javascript" src="@{Webjar.asset("material-design-lite", "1.3.0", "material.min.js")}"></script>
+    <script type="text/javascript" src="@{Webjar.asset("jquery", "3.1.1-1", "jquery.min.js")}"></script>
+    <script type="text/javascript" src="@{Asset.at("0x7e.js")}"></script>
+</html>

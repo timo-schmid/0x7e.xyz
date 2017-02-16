@@ -1,0 +1,21 @@
+image: "hseeberger/scala-sbt"
+
+variables:
+  SBT_OPTS: "-Dsbt.global.base=/sbt-cache/.sbtboot -Dsbt.boot.directory=/sbt-cache/.boot -Dsbt.ivy.home=/sbt-cache/.ivy"
+
+stages:
+  - publish
+  - deploy
+
+build:
+  stage: publish
+  script:
+    - bash .docker-login.sh
+    - sbt clean publish docker:publish
+    - docker tag "docker.timo-schmid.ch/0x7e.xyz:latest" "docker.timo-schmid.ch/0x7e.xyz:${CI_PIPELINE_ID}"
+    - docker push "docker.timo-schmid.ch/0x7e.xyz:${CI_PIPELINE_ID}"
+
+deploy:
+  stage: deploy
+    - echo "TODO: deploy"
+

@@ -1,0 +1,53 @@
+.mdl-layout-title,
+.mdl-navigation,
+.mdl-navigation a.mdl-navigation__link {
+    color: #b58900 !important;
+}
+h2,h3,a {
+    line-height: 0;
+    color: rgba(0,42, 54, 0.85) !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mdl-layout__header--transparent.mdl-layout__header--transparent {
+    background: #002a36;
+    background: -webkit-linear-gradient(rgba(0, 42, 54, 1), rgba(0, 42, 54, 0));
+    background: -o-linear-gradient(rgba(0, 42, 54, 1), rgba(0, 42, 54, 0));
+    background: -moz-linear-gradient(rgba(0, 42, 54, 1), rgba(0, 42, 54, 0));
+    background: linear-gradient(rgba(0, 42, 54, 1), rgba(0, 42, 54, 0));
+    height: 80px;
+}
+.mdl-snackbar {
+    background-color: white;
+    }
+.mdl-snackbar__text {
+    color: rgba(0,42, 54, 0.85);
+    text-align: center;
+}
+.layout-bg-code {
+    background: url('/assets/bg.jpg') center / cover;
+}
+.mdl-textfield__label:after {
+    background-color: rgba(0,42, 54, 0.85);
+}
+.short-link-card,
+.shorten-link-card,
+.mdl-textfield {
+    width: 100%;
+    min-height: 1px;
+}
+.mdl-card__supporting-text {
+    text-align: center;
+}
+.short-link-card {
+    margin-top: 10px;
+}
+.mdl-button {
+    float: right;
+}
+.mdl-button--raised.mdl-button--colored {
+    background: rgba(0,42, 54, 0.85);
+}
+.mdl-button--raised.mdl-button--colored:hover {
+    background: rgba(0,42, 54, 0.75);
+}

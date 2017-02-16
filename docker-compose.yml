@@ -1,0 +1,19 @@
+#
+# Docker-Compose file
+# ===================
+#
+# This file is used to run the postgresql database inside docker.
+#
+
+version: '2'
+
+services:
+  postgres:
+    image: "postgres:9.6.0"
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_DB=shortlinks"
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=scala"
+
