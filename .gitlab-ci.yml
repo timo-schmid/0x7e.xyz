@@ -18,5 +18,5 @@ build:
 deploy:
   stage: deploy
   script:
-    - echo "TODO: deploy"
+    - echo TODO
 
