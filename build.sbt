@@ -95,6 +95,8 @@ maintainer in Docker := "Timo Schmid <timo.schmid@gmail.com>"
 
 dockerRepository := Some("docker.timo-schmid.ch")
 
+dockerUpdateLatest := true
+
 defaultLinuxInstallLocation in Docker := "/opt/0x7e.xyz"
 
 daemonUser in Docker := "daemon"
