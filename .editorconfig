@@ -1,0 +1,24 @@
+#
+# Agnostic editor configuration.
+# http://editorconfig.org
+#
+
+#
+# General settings
+# 
+[**]
+# unix-style newlines
+end_of_line = lf
+# newline at the end of a file
+insert_final_newline = true
+# utf-8
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+#
+# .sbt & .scala files
+#
+[{**.sbt,**.scala}]
+indent_size = 2
+
