@@ -59,11 +59,11 @@ object Config {
   object http {
 
     val listenHost: String =
-      env.getOrElse("DB_HOST", DEFAULT_HTTP_LISTEN_HOST)
+      env.getOrElse("HTTP_LISTEN_HOST", DEFAULT_HTTP_LISTEN_HOST)
 
     val listenPort: Int =
       env
-        .get("HTTP_PORT")
+        .get("HTTP_LISTEN_PORT")
         .flatMap(toIntOption)
         .getOrElse(DEFAULT_HTTP_LISTEN_PORT)
 
