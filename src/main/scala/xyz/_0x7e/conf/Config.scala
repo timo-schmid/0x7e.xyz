@@ -35,6 +35,10 @@ object Config {
 
   // default values
 
+  private val DEFAULT_HTTP_LISTEN_HOST = "127.0.0.1"
+
+  private val DEFAULT_HTTP_LISTEN_PORT = 8080
+
   private val DEFAULT_HTTP_PROTOCOL = "http"
 
   private val DEFAULT_HTTP_HOSTNAME = "localhost"
@@ -53,6 +57,15 @@ object Config {
 
   // http settings
   object http {
+
+    val listenHost: String =
+      env.getOrElse("DB_HOST", DEFAULT_HTTP_LISTEN_HOST)
+
+    val listenPort: Int =
+      env
+        .get("HTTP_PORT")
+        .flatMap(toIntOption)
+        .getOrElse(DEFAULT_HTTP_LISTEN_PORT)
 
     val protocol: String =
       env
