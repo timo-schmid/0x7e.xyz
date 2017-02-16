@@ -39,7 +39,7 @@ object WebServer extends ServerApp {
   // The database transactor
   private val xa = DriverManagerTransactor[Task](
     "org.postgresql.Driver",
-    s"jdbc:postgresql:${Config.db.name}",
+    s"jdbc:postgresql://${Config.db.host}:${Config.db.port}/${Config.db.name}",
     Config.db.user,
     Config.db.password
   )

@@ -41,6 +41,10 @@ object Config {
 
   private val DEFAULT_HTTP_PORT = 8080
 
+  private val DEFAULT_DB_HOST = "localhost"
+
+  private val DEFAULT_DB_PORT = 5432
+
   private val DEFAULT_DB_NAME = "shortlinks"
 
   private val DEFAULT_DB_USER = "postgres"
@@ -83,6 +87,12 @@ object Config {
 
   // db settings
   object db {
+
+    val host: String =
+      env.getOrElse("DB_HOST", DEFAULT_DB_HOST)
+
+    val port: Int =
+      env.get("DB_PORT").flatMap(toIntOption).getOrElse(DEFAULT_DB_PORT)
 
     val name: String =
       env.getOrElse("DB_NAME", DEFAULT_DB_NAME)
