@@ -67,7 +67,7 @@ object WebServer extends ServerApp {
   override def server(args: List[String]): Task[Server] =
     Urls.createSchema.transact(xa).flatMap { i =>
       BlazeBuilder
-        .bindHttp(Config.http.port)
+        .bindHttp(8080)
         .mountService(serverInfo.service, "/")
         .mountService(websiteRoutes.service, "/")
         .mountService(webjarRoutes.service, "/assets/webjars")
