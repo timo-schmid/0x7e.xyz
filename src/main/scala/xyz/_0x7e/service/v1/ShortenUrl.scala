@@ -33,8 +33,7 @@ class ShortenUrl(val shortHostName: String, val fullHostName: String, xa: Transa
 
   val service = HttpService {
 
-    case GET -> Root /  key => {
-      println("hier")
+    case GET -> Root /  key =>
       Urls
         .findUrlByKey(key)
         .transact(xa)
@@ -45,7 +44,6 @@ class ShortenUrl(val shortHostName: String, val fullHostName: String, xa: Transa
             NotFound(ShortenError(404, "Not found").asJson)
           }
         }
-    }
 
     case httpRequest @ POST -> Root / "shorten" =>
       for {
